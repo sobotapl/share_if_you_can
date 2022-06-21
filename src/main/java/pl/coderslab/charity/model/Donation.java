@@ -22,6 +22,7 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
     private int quantity;
 
     @ManyToMany
