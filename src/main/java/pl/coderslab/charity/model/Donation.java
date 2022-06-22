@@ -1,5 +1,6 @@
 package pl.coderslab.charity.model;
 import lombok.*;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -23,7 +24,7 @@ public class Donation {
     private long id;
 
     @NotNull
-    private int quantity;
+    private int quantity; //W trello Integer?
 
     @ManyToMany
     private List<Category> categories;
@@ -38,12 +39,17 @@ public class Donation {
     private String city;
 
     @NotNull
+    @Pattern(regexp="[0-9]{2}-[0-9]{3}",message = "Invalid format")
     private String zipCode;
 
     @NotNull
+//    @CreationTimestamp
+//    @UpdateTimestamp
     private LocalDate pickUpDate;
 
     @NotNull
+//    @CreationTimestamp
+//    @UpdateTimestamp
     private LocalTime pickUpTime;
 
     @NotNull

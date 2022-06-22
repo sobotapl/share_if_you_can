@@ -9,7 +9,13 @@ import java.util.List;
 
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
 
+    List<Institution> findAll();
+
     @Query("SELECT i FROM Institution i ORDER BY i.id DESC")
     List<Institution> findAllById();
+
+
+
+
 
 }
