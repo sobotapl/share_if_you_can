@@ -30,8 +30,8 @@ public class Donation {
     private int quantity;
 
     @NotEmpty
-    @ManyToMany(fetch = FetchType.LAZY)
-    private List<Category> categories = new ArrayList<>();
+    @ManyToMany//(fetch = FetchType.LAZY)
+    private List<Category> categories;// = new ArrayList<>();
 
     @ManyToOne
     private Institution institution;
