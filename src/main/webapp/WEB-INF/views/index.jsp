@@ -3,8 +3,13 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
-<<%@include file="head.jsp" %>
-<%@include file="header.jsp" %>
+<!DOCTYPE html>
+
+<jsp:include page="head.jsp"/>
+
+<body>
+
+<jsp:include page="header.jsp"/>
 
 
 <section class="stats">
@@ -76,6 +81,7 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
+<%--           <c:forEach items="${institutions}" var="institution" varStatus="counter">--%>
             <li>
                 <div class="col">
                     <div class="title">Fundacja "Dbam o Zdrowie"</div>
