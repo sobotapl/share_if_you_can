@@ -1,20 +1,26 @@
 package pl.coderslab.charity.service;
 import lombok.Data;
 import org.springframework.stereotype.Service;
+import pl.coderslab.charity.repository.DonationRepository;
 
 @Data
 @Service
 public class DonationServiceImpl implements DonationService{
 
-    DonationServiceImpl donationService;
+    private final DonationRepository donationRepository;
 
     @Override
     public Integer getSumOfBags() {
-        return donationService.getSumOfBags();
+        return donationRepository.getSumOfBags();
     }
 
     @Override
     public Integer getNumberOfDonations() {
-        return donationService.getNumberOfDonations();
+        return donationRepository.getNumberOfDonations();
     }
+
+
+
+
+
 }
