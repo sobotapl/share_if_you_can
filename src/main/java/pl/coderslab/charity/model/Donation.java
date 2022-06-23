@@ -3,6 +3,8 @@ import lombok.*;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
@@ -21,21 +23,22 @@ public class Donation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
-    private int quantity; //W trello Integer?
+    private int quantity;
 
     @ManyToMany
+    @NotEmpty
     private List<Category> categories;
 
     @ManyToOne
     private Institution institution;
 
-    @NotNull
+    @NotBlank
     private String street;
 
-    @NotNull
+    @NotBlank
     private String city;
 
     @NotNull
@@ -43,15 +46,11 @@ public class Donation {
     private String zipCode;
 
     @NotNull
-//    @CreationTimestamp
-//    @UpdateTimestamp
     private LocalDate pickUpDate;
 
     @NotNull
-//    @CreationTimestamp
-//    @UpdateTimestamp
     private LocalTime pickUpTime;
 
-    @NotNull
+    @NotBlank
     private String pickUpComment;
 }
