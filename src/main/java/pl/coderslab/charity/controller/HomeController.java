@@ -34,8 +34,8 @@ public class HomeController {
         return donationService.getNumberOfDonations();
     }
 
-    @ModelAttribute("amountOfBags")
-    public List<Institution> returnAllInstitutions(){
+    @ModelAttribute("institutions")
+    public List<Institution> getnAllInstitutions(){
         return institutionService.findAll();
     }
 

@@ -1,6 +1,7 @@
 package pl.coderslab.charity.service;
 import lombok.Data;
 import org.springframework.stereotype.Service;
+import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.repository.DonationRepository;
 
 @Data
@@ -19,8 +20,10 @@ public class DonationServiceImpl implements DonationService{
         return donationRepository.getNumberOfDonations();
     }
 
-
-
+    @Override
+    public void addDonation(Donation donation) {
+        donationRepository.save(donation);
+    }
 
 
 }

@@ -13,6 +13,6 @@ public class InstitutionServiceImpl implements InstitutionService{
 
     @Override
     public List<Institution> findAll() {
-        return null;
+        return institutionRepository.findAll();
     }
 }
