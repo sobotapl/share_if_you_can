@@ -99,11 +99,14 @@
                 <c:if test="${counter.count%2 ==0 }">
                     </li>
                 </c:if>
-
-
+                <c:if test="${counter.last}">
+<%--                    //text-decoration--%>
+                    <div class="col" style="visibility: hidden">
+                    </div>
+                    </li>
+                </c:if>
             </c:forEach>
         </ul>
-
     </div>
 
 </section>

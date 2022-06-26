@@ -9,8 +9,8 @@ INSERT INTO `categories` (name) VALUES
 
 INSERT INTO `institutions` (name, description) VALUES
     ('Fundacja "Dbam o Zdrowie"', 'Cel i misja: Pomoc dzieciom z ubogich rodzin'),
+    ('Fundacja "Nowy dom"', 'Cel i misja: Pomoc na nowy start'),
     ('Fundacja "A kogo"', 'Cel i misja: Pomoc wybudzaniu dzieci ze śpiączki.'),
-    ('Fundacja "Dbam o Zdrowie"', 'Cel i misja: Pomoc dzieciom z ubogich rodzin'),
     ('Fundacja “Dla dzieci"', 'Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.'),
     ('Fundacja “Bez domu”', 'Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania');
 
