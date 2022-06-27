@@ -84,7 +84,7 @@
         <ul class="help--slides-items">
             <c:forEach items="${institutions}" var="institution" varStatus="counter">
 
-<%--                counter.count --> starts counting at 1--%>
+                <%--                counter.count --> starts counting at 1--%>
                 <c:if test="${counter.count%2 ==1 }">
                     <li>
                 </c:if>
@@ -98,7 +98,7 @@
                     </li>
                 </c:if>
                 <c:if test="${counter.last}">
-<%--                    //text-decoration--%>
+                    <%--                    //text-decoration--%>
                     <div class="col" style="visibility: hidden">
                     </div>
                     </li>

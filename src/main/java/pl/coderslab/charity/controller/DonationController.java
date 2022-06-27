@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.model.Category;
 import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
-import pl.coderslab.charity.service.CategoryServiceImpl;
-import pl.coderslab.charity.service.DonationServiceImpl;
-import pl.coderslab.charity.service.InstitutionServiceImpl;
+import pl.coderslab.charity.service.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -22,14 +20,14 @@ import java.util.List;
 @RequestMapping
 public class DonationController {
 
-    private final DonationServiceImpl donationService;
-    private final CategoryServiceImpl categoryService;
-    private final InstitutionServiceImpl institutionService;
+    private final DonationService donationService;
+    private final CategoryService categoryService;
+    private final InstitutionService institutionService;
 
     @GetMapping("/donation")
     public String addDonation(Model model) {
         model.addAttribute("donation", new Donation());
-        return "donation-form";
+        return "donation-add";
     }
 
     @PostMapping("donation")
@@ -38,7 +36,7 @@ public class DonationController {
 
         if (result.hasErrors()) {
             model.addAttribute("errors", true);
-            return "donation-form";
+            return "donation-add";
         }
         donationService.addDonation(donation);
         return "";
@@ -51,7 +49,7 @@ public class DonationController {
     }
 
     @ModelAttribute("categories")
-    public List<Category> returnAllCategories(){
+    public List<Category> getAllCategories(){
         return categoryService.findAll();
     }
 

@@ -5,7 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import pl.coderslab.charity.model.Institution;
+import pl.coderslab.charity.service.DonationService;
 import pl.coderslab.charity.service.DonationServiceImpl;
+import pl.coderslab.charity.service.InstitutionService;
 import pl.coderslab.charity.service.InstitutionServiceImpl;
 import java.util.List;
 
@@ -14,13 +16,14 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private final InstitutionServiceImpl institutionService;
-    private final DonationServiceImpl donationService;
+
+    private final InstitutionService institutionService;
+    private final DonationService donationService;
 
 
     @GetMapping("/")
     public String homeAction(Model model) {
-        return "index";
+        return "landing-page";
     }
 
 
@@ -30,12 +33,12 @@ public class HomeController {
     }
 
     @ModelAttribute("amountOfBags")
-    public Integer getAmountOfBags(){
+    public Long getAmountOfBags(){
         return donationService.getNumberOfDonations();
     }
 
     @ModelAttribute("institutions")
-    public List<Institution> getnAllInstitutions(){
+    public List<Institution> getAllInstitutions(){
         return institutionService.findAll();
     }
 

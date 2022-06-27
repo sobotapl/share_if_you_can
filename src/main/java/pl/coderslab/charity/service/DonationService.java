@@ -8,7 +8,7 @@ public interface DonationService {
 
     Integer getSumOfBags();
 
-    Integer getNumberOfDonations();
+    Long getNumberOfDonations();
 
     void addDonation(Donation donation);
 }

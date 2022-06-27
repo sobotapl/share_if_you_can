@@ -16,8 +16,8 @@ public class DonationServiceImpl implements DonationService{
     }
 
     @Override
-    public Integer getNumberOfDonations() {
-        return donationRepository.getNumberOfDonations();
+    public Long getNumberOfDonations() {
+        return donationRepository.count();
     }
 
     @Override

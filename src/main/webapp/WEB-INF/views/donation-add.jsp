@@ -24,11 +24,11 @@
         </ul>
 
         <ul>
-            <li><a href="index.html" class="btn btn--without-border active">Start</a></li>
-            <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="/" class="btn btn--without-border active">Start</a></li>
+            <li><a href="#stats" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a href="#about" class="btn btn--without-border">O nas</a></li>
+            <li><a href="#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
 
@@ -85,7 +85,7 @@
 
      <form:form modelAttribute="donation" action="/donation" method="post">
 
-         !-- STEP 1: class .active is switching steps -->
+<%--      <--   !-- STEP 1: class .active is switching steps -->--%>
          <div data-step="1" class="active">
              <h3>Zaznacz co chcesz oddać:</h3>
                  <%--TODO foreach z listą wszystkich categories--%>
@@ -206,9 +206,7 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
+                                <span class="summary--text">4 worki ubrań w dobrym stanie dla dzieci</span>
                             </li>
 
                             <li>
