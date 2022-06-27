@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.charity.model.User;
 import pl.coderslab.charity.repository.UserRepository;
 
+import java.util.Optional;
+
 @Data
 @Service
 public class UserServiceImpl implements UserService {
@@ -13,6 +15,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveUser(User user) {
         userRepository.save(user);
+    }
+
+    @Override
+    public Optional<User> findUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
 }
