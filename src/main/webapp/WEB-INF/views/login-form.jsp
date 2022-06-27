@@ -11,16 +11,19 @@
 
 <section class="login-page">
     <h2>Zaloguj się</h2>
-<form:form action="/login" modelAttribute="login" method="post">
+
+<form:form action="/login" modelAttribute="loginForm" method="post">
+
+        <div class="form-group">
+            <form:input path="userName" placeholder="userName"/>
+        </div>
 
         <div class="form-group">
             <form:input path="email" placeholder="email"/>
-
         </div>
 
         <div class="form-group">
         <form:input path="password" placeholder="password"/>
-
             <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
 

@@ -1,7 +1,7 @@
 package pl.coderslab.charity.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.coderslab.charity.model.User;
+import pl.coderslab.charity.model.UserEntity;
 
 import java.util.Optional;
 
@@ -11,8 +11,10 @@ public interface UserService {
 
 
     @Transactional
-    void saveUser(User user);
+    void saveUser(UserEntity user);
 
-    Optional<User> findUserByEmail(String email);
+    Optional<UserEntity> findUserByEmail(String email);
+
+    UserEntity findByName(String name);
 
 }

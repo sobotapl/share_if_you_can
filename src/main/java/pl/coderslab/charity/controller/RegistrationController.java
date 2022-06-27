@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.coderslab.charity.model.User;
+import pl.coderslab.charity.model.UserEntity;
 import pl.coderslab.charity.service.UserService;
 
 import javax.validation.Valid;
@@ -22,12 +22,12 @@ public class RegistrationController {
 
     @GetMapping
     public String register(Model model) {
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserEntity());
         return "register";
     }
 
     @PostMapping
-    public String register(@ModelAttribute("user") @Valid User user, BindingResult result) {
+    public String register(@ModelAttribute("user") @Valid UserEntity user, BindingResult result) {
         if (result.hasErrors() && user.getPassword().equals(user.getPassword2()) ){
             return "register";
 
