@@ -1,4 +1,4 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.controller.mvc;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,10 +28,11 @@ public class RegistrationController {
 
     @PostMapping
     public String register(@ModelAttribute("user") @Valid UserEntity user, BindingResult result) {
-        if (result.hasErrors() && user.getPassword().equals(user.getPassword2()) ){
-            return "register";
+        //if (result.hasErrors() && user.getPassword().equals(user.getPassword2()) ){
+        if (result.hasErrors()){
+        return "register";
 
-        } else {
+        }
             userService.saveUser(user);
             return "landing-page";
         }
@@ -40,6 +41,3 @@ public class RegistrationController {
 
 
 
-
-
-}

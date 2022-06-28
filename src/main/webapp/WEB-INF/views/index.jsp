@@ -6,11 +6,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<jsp:include page="head.jsp"/>
+<jsp:include page="fragments/head.jsp"/>
 
 <body>
 
-<jsp:include page="header.jsp"/>
+<jsp:include page="fragments/header.jsp"/>
 
 
 <section class="stats">
@@ -109,7 +109,7 @@
 
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="fragments/footer.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>

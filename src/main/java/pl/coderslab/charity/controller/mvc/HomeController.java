@@ -1,4 +1,4 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.controller.mvc;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +40,26 @@ public class HomeController {
     @ModelAttribute("institutions")
     public List<Institution> getAllInstitutions(){
         return institutionService.findAll();
+    }
+
+    @GetMapping("/contact")
+    public String getContact(){
+        return "fragments/contact";
+    }
+
+    @GetMapping("/about")
+    public String getAbout(){
+        return "fragments/about";
+    }
+
+    @GetMapping("/info")
+    public String getInfo(){
+        return "fragments/info";
+    }
+
+    @GetMapping("/institutions")
+    public String getInstitutions(){
+        return "fragments/institutions";
     }
 
 

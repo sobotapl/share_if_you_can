@@ -15,6 +15,6 @@ public interface UserService {
 
     Optional<UserEntity> findUserByEmail(String email);
 
-    UserEntity findByName(String name);
+
 
 }

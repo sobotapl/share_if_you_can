@@ -5,10 +5,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<jsp:include page="head.jsp"/>
+<jsp:include page="fragments/head.jsp"/>
 
-<body>
-<jsp:include page="header.jsp"/>
 
 <section class="login-page">
     <h2>Załóż konto</h2>
@@ -31,9 +29,9 @@
         <form:input path="password" placeholder="password"/>
         </div>
 
-        <div class="form-group">
-        <form:input path="password2" placeholder="password repat"/>
-        </div>
+<%--        <div class="form-group">--%>
+<%--        <form:input path="password2" placeholder="password repat"/>--%>
+<%--        </div>--%>
 
         <div class="form-group form-group--buttons">
             <a href="login.html" class="btn btn--without-border">Zaloguj się</a>
@@ -42,7 +40,7 @@
         </form:form>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="fragments/footer.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>

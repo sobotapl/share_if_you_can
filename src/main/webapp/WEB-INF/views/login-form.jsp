@@ -4,15 +4,15 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
-<jsp:include page="head.jsp"/>
+<jsp:include page="fragments/head.jsp"/>
 
 <body>
-<jsp:include page="header.jsp"/>
+<jsp:include page="fragments/header.jsp"/>
 
 <section class="login-page">
     <h2>Zaloguj się</h2>
 
-<form:form action="/login" modelAttribute="loginForm" method="post">
+<form:form action="/login" modelAttribute="login" method="post">
 
         <div class="form-group">
             <form:input path="userName" placeholder="userName"/>
@@ -35,7 +35,7 @@
     </form:form>
 </section>
 
-<%@include file="footer.jsp" %>
+<%@include file="fragments/footer.jsp" %>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
 </body>
