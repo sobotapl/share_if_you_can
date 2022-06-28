@@ -1,4 +1,4 @@
-package pl.coderslab.charity.controller;
+package pl.coderslab.charity.controller.mvc;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +12,7 @@ import pl.coderslab.charity.model.Donation;
 import pl.coderslab.charity.model.Institution;
 import pl.coderslab.charity.service.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -24,23 +25,32 @@ public class DonationController {
     private final CategoryService categoryService;
     private final InstitutionService institutionService;
 
+    // obiekt posredniczzacy?
+    @PostMapping("donation")
+    public String addingDonation(HttpSession httpSession) {
+        Donation donation = (Donation) httpSession.getAttribute("donation");
+        donationService.addDonation(donation);
+        httpSession.removeAttribute("donation");
+        return "donation"; //powinno byc confirmation
+
+    }
+    @PostMapping("/displaysummary")
+    public String displaySummary(@Valid @ModelAttribute("donation") Donation donation,
+                                 BindingResult result, Model model, HttpSession httpSession){
+        model.addAttribute("donation", donation);
+        httpSession.setAttribute("donation", donation);
+        return "donationconfirmation";
+    }
+
     @GetMapping("/donation")
     public String addDonation(Model model) {
         model.addAttribute("donation", new Donation());
         return "donation-add";
     }
 
-    @PostMapping("donation")
-    public String addingDonation(@Valid @ModelAttribute("donation") Donation donation,
-                                 BindingResult result, Model model) {
-
-        if (result.hasErrors()) {
-            model.addAttribute("errors", true);
-            return "donation-add";
-        }
-        donationService.addDonation(donation);
-        return "";
-
+    @ModelAttribute("donation")
+    public Donation donation() {
+        return new Donation();
     }
 
     @ModelAttribute("institutions")
