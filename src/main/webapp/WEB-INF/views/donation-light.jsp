@@ -3,10 +3,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="input" uri="http://www.springframework.org/tags/form" %>
 
-
 <!DOCTYPE html>
 
-<jsp:include page="head.jsp"/>
+<jsp:include page="fragments/head.jsp"/>
 
 
 <body>
