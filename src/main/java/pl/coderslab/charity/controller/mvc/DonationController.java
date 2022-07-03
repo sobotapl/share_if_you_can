@@ -25,22 +25,6 @@ public class DonationController {
     private final CategoryService categoryService;
     private final InstitutionService institutionService;
 
-    // obiekt posredniczzacy?
-    @PostMapping("donation")
-    public String addingDonation(HttpSession httpSession) {
-        Donation donation = (Donation) httpSession.getAttribute("donation");
-        donationService.addDonation(donation);
-        httpSession.removeAttribute("donation");
-        return "donation"; //powinno byc confirmation
-
-    }
-    @PostMapping("/displaysummary")
-    public String displaySummary(@Valid @ModelAttribute("donation") Donation donation,
-                                 BindingResult result, Model model, HttpSession httpSession){
-        model.addAttribute("donation", donation);
-        httpSession.setAttribute("donation", donation);
-        return "donationconfirmation";
-    }
 
     @GetMapping("/donation")
     public String addDonation(Model model) {
@@ -48,9 +32,21 @@ public class DonationController {
         return "donation-add";
     }
 
-    @ModelAttribute("donation")
-    public Donation donation() {
-        return new Donation();
+    @PostMapping("donation")
+    public String addingDonation(HttpSession httpSession) {
+        Donation donation = (Donation) httpSession.getAttribute("donation");
+        donationService.addDonation(donation);
+        httpSession.removeAttribute("donation");
+        return "donation-confirmation";
+
+    }
+
+    @PostMapping("/displaysummary")
+    public String displaySummary(@Valid @ModelAttribute("donation") Donation donation,
+                                 BindingResult result, Model model, HttpSession httpSession){
+        model.addAttribute("donation", donation);
+        httpSession.setAttribute("donation", donation);
+        return "donation-summary";
     }
 
     @ModelAttribute("institutions")
