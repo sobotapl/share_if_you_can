@@ -38,7 +38,6 @@ public class DonationController {
         donationService.addDonation(donation);
         httpSession.removeAttribute("donation");
         return "donation-confirmation";
-
     }
 
     @PostMapping("/displaysummary")

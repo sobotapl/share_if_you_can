@@ -1,4 +1,5 @@
 
+
 INSERT INTO `categories` (name) VALUES
     ('Ubrania'),
     ('Zabawki'),

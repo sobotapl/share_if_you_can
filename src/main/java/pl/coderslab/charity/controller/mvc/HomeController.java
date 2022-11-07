@@ -26,6 +26,9 @@ public class HomeController {
         return "landing-page";
     }
 
+    @GetMapping("/about")
+    public String about() { return "Here you can find some details for logged users"; }
+
 
     @ModelAttribute("sumOfDonations")
     public Integer getSumOfBugs(){
@@ -40,26 +43,6 @@ public class HomeController {
     @ModelAttribute("institutions")
     public List<Institution> getAllInstitutions(){
         return institutionService.findAll();
-    }
-
-    @GetMapping("/contact")
-    public String getContact(){
-        return "fragments/contact";
-    }
-
-    @GetMapping("/about")
-    public String getAbout(){
-        return "fragments/about";
-    }
-
-    @GetMapping("/info")
-    public String getInfo(){
-        return "fragments/info";
-    }
-
-    @GetMapping("/institutions")
-    public String getInstitutions(){
-        return "fragments/institutions";
     }
 
 
